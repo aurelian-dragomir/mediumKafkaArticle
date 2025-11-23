@@ -1,12 +1,12 @@
 spring:
   kafka:
     bootstrap-servers: localhost:9092
-    template:
-      default-topic: out
-    producer:
-      key-serializer: org.apache.kafka.common.serialization.VoidSerializer
-      value-serializer: org.apache.kafka.common.serialization.StringSerializer
-      transaction-id-prefix: tx-
+#    template:
+#      default-topic: out
+#    producer:
+#      key-serializer: org.apache.kafka.common.serialization.VoidSerializer
+#      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+#      transaction-id-prefix: tx-
 
 logging:
   level.root: ERROR
