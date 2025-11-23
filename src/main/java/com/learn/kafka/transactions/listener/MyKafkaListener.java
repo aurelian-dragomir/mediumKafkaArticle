@@ -1,14 +1,25 @@
 package com.learn.kafka.transactions.listener;
 
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.kafka.annotation.KafkaListener;
+import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 @Component
+@Slf4j
+@RequiredArgsConstructor
 public class MyKafkaListener {
 
-    @KafkaListener(topics = "out")
+    private final KafkaTemplate<Void, String> kafkaTemplate;
+
+    @KafkaListener(topics = "in")
+    @Transactional
     public void listen(String value) {
-        System.out.println("******\n******\n******\n " + value);
+        log.info("Received value {} in topic in", value);
+        String upperCase = value.toUpperCase();
+        kafkaTemplate.sendDefault(upperCase);
     }
 
 }

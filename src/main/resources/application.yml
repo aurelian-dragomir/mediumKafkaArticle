@@ -5,6 +5,8 @@ spring:
       key-deserializer: org.apache.kafka.common.serialization.VoidDeserializer
       value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       group-id: my-group-id
+      properties:
+        isolation.level: read_committed
 
 logging:
   level.root: ERROR
@@ -12,3 +14,4 @@ logging:
     com.learn.kafka: info
     org.springframework.kafka.transaction: trace
     org.springframework.kafka.core.DefaultKafkaProducerFactory: trace
+    org.springframework.kafka.listener: trace
