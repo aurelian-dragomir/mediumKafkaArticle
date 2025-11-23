@@ -1,0 +1,15 @@
+spring:
+  kafka:
+    bootstrap-servers: localhost:9092
+    template:
+      default-topic: out
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.VoidSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      transaction-id-prefix: tx-
+
+logging:
+  level.root: ERROR
+  level:
+    org.springframework.kafka.transaction: trace
+    org.springframework.kafka.core.DefaultKafkaProducerFactory: trace

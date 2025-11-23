@@ -6,8 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class LearnKafkaTransactionsApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(LearnKafkaTransactionsApplication.class, args);
-	}
-
+    public static void main(String[] args) {
+        SpringApplication.run(LearnKafkaTransactionsApplication.class, args);
+    }
 }
