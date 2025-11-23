@@ -1,15 +1,23 @@
 spring:
   kafka:
     bootstrap-servers: localhost:9092
-#    template:
-#      default-topic: out
-#    producer:
-#      key-serializer: org.apache.kafka.common.serialization.VoidSerializer
-#      value-serializer: org.apache.kafka.common.serialization.StringSerializer
-#      transaction-id-prefix: tx-
+    template:
+      default-topic: out
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.VoidSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      transaction-id-prefix: tx-
+    consumer:
+      key-deserializer: org.apache.kafka.common.serialization.VoidDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      group-id: my-group-id
+      properties:
+        isolation.level: read_committed
 
 logging:
   level.root: ERROR
   level:
+    com.learn.kafka: info
     org.springframework.kafka.transaction: trace
     org.springframework.kafka.core.DefaultKafkaProducerFactory: trace
+    org.springframework.kafka.listener: trace
