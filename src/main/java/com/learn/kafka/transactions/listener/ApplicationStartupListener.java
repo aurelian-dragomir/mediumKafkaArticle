@@ -1,6 +1,6 @@
 package com.learn.kafka.transactions.listener;
 
-import com.learn.kafka.transactions.kafka.producer.KafkaService;
+import com.learn.kafka.transactions.kafka.producer.MyService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.event.EventListener;
@@ -11,10 +11,12 @@ import org.springframework.stereotype.Component;
 @RequiredArgsConstructor
 public class ApplicationStartupListener {
 
-    private final KafkaService kafkaService;
+    private final MyService myService;
 
     @EventListener
     public void onApplicationReady(ApplicationReadyEvent event) {
-        kafkaService.send("one", "two");
+//        myService.sendAndCommitDatabaseTxFirst("one");
+
+        myService.sendAndCommitKafkaTxFirst("one");
     }
 }
