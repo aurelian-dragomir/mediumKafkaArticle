@@ -1,4 +1,4 @@
-package com.learn.kafka.transactions.kafka.producer;
+package com.learn.kafka.transactions.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.kafka.core.KafkaTemplate;

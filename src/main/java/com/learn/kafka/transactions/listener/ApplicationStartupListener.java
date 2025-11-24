@@ -1,6 +1,6 @@
 package com.learn.kafka.transactions.listener;
 
-import com.learn.kafka.transactions.kafka.producer.KafkaService;
+import com.learn.kafka.transactions.service.KafkaService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.event.EventListener;
