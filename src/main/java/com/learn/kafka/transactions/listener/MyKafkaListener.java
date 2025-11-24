@@ -19,5 +19,4 @@ public class MyKafkaListener {
         String upperCase = value.toUpperCase();
         kafkaTemplate.sendDefault(upperCase);
     }
-
 }
