@@ -21,3 +21,4 @@ logging:
     org.springframework.kafka.transaction: trace
     org.springframework.kafka.core.DefaultKafkaProducerFactory: trace
     org.springframework.kafka.listener: trace
+    org.springframework.kafka.transaction.KafkaTransactionManager: debug
